@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PacientesComponent } from './pacientes/pacientes.component';
+import { PacientesComponent } from './Pages/pacientes/pacientes.component';
+import { SidebarComponent } from './Shared/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PacientesComponent
+    PacientesComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
