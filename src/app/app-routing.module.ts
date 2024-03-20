@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PacientesComponent } from './Pages/pacientes/pacientes.component';
+import { SidebarComponent } from './Shared/sidebar/sidebar.component';
 
 const routes: Routes = [
-  { path: 'pacientes', component: PacientesComponent },
+  { path: '', component: SidebarComponent },
 ];
 
 @NgModule({
