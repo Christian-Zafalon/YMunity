@@ -11,13 +11,11 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PacientesComponent,
-    SidebarComponent
-  ],
+  declarations: [AppComponent, PacientesComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,9 +24,11 @@ import { SidebarModule } from 'primeng/sidebar';
     ButtonModule,
     InputTextModule,
     RippleModule,
-    SidebarModule
+    SidebarModule,
+    AvatarModule,
+    AvatarGroupModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
