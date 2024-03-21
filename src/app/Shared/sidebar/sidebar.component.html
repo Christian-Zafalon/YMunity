@@ -1,4 +1,4 @@
-<p-sidebar #sidebarRef [(visible)]="sidebarVisible"
+<p-sidebar #sidebarRef [closeOnEscape]="false" [(visible)]="sidebarVisible" [modal]="false"
     [style]="{'border-radius': '0px 16px 16px 0px', 'width': '214px', 'height': '768px'}">
     <ng-template pTemplate="headless">
         <div class="flex flex-column h-full sidebar">
