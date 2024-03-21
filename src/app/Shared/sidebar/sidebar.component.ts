@@ -9,8 +9,8 @@ export class SidebarComponent {
   menuItems = [
     { label: 'Home', icon: 'pi pi-home mr-2' },
     { label: 'Pacientes', icon: 'pi pi-users mr-2'},
-    { label: 'Solicitações', icon: 'pi pi-comments mr-2' },
-    { label: 'Atendimentos', icon: 'pi pi-calendar mr-2' },
+    { label: 'Solicitações', icon: 'pi pi-calendar-plus mr-2' },
+    { label: 'Atendimentos', icon: 'pi pi-briefcase mr-2' },
     { label: 'Dashboards', icon: 'pi pi-cog mr-2' }
 ];
 

@@ -11,8 +11,9 @@
             <div class="flex align-items-center justify-content-between px-4 pt-3 flex-shrink-0 bar_cell_container">
                 <div class="bar_cell_profile_container">
                     <div class="bar_cell_profile_properties">
-                        
-                        <p-avatar label="YM" shape="circle" [style]="{'background-color':'#E0E9F8'}" class="avatar_profile"></p-avatar>
+
+                        <p-avatar label="YM" shape="circle" [style]="{'background-color':'#E0E9F8'}"
+                            class="avatar_profile"></p-avatar>
                         <span class="name-profile">Nome Sobrenome</span>
                     </div>
                     <div class="bar_cell_profile_properties">
@@ -29,9 +30,16 @@
                     </a>
                 </li>
             </div>
-            <div class="mt-auto">
-                <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
-
+            <div class="bar_cell_container_null">
+            </div>
+            <div>
+                <li class="bar_cell_navigator">
+                    <a pRipple
+                        class="flex align-items-center cursor-pointer p-3 text-200 transition-duration-150 transition-colors p-ripple bar_cell_hover">
+                        <i class="pi pi-sign-out mr-2"></i>
+                        <h3 class="font-medium">Sair</h3>
+                    </a>
+                </li>
             </div>
         </div>
     </ng-template>

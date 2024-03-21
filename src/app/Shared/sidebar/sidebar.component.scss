@@ -86,9 +86,7 @@
     height: 18px;
     gap: 0px;
     opacity: 0px;
-
     color: #FFFFFF;
-
 }
 
 .bar_cell_navegator {
@@ -110,4 +108,11 @@
 
 .bar_cell_hover:hover {
     background-color: #F7F8F9;
+}
+
+.bar_cell_container_null {
+    width: 206px;
+    height: 130px;
+    gap: 0px;
+    opacity: 0px;
 }
