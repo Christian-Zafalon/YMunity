@@ -13,7 +13,8 @@ import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
-
+import { TableModule } from 'primeng/table';
+import { ProductService } from './Service/productservice';
 @NgModule({
   declarations: [AppComponent, PacientesComponent, SidebarComponent],
   imports: [
@@ -27,8 +28,9 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     SidebarModule,
     AvatarModule,
     AvatarGroupModule,
+    TableModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
