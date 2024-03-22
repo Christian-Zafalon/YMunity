@@ -17,6 +17,8 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { TableModule } from 'primeng/table';
 import { ProductService } from './Service/productservice';
 import { DropdownModule } from 'primeng/dropdown';
+import { RatingModule } from 'primeng/rating';
+import { TagModule } from 'primeng/tag';
 @NgModule({
   declarations: [AppComponent, PacientesComponent, SidebarComponent],
   imports: [
@@ -32,7 +34,9 @@ import { DropdownModule } from 'primeng/dropdown';
     AvatarModule,
     AvatarGroupModule,
     TableModule,
-    DropdownModule
+    DropdownModule,
+    RatingModule,
+    TagModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],

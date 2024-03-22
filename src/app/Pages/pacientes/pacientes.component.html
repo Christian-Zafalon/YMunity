@@ -12,27 +12,29 @@
     <div class="card flex flex-wrap" style="display: flex; justify-content: space-between;">
         <div>
             <span class="p-input-icon-right ">
-                <input type="text" pInputText [(ngModel)]="value" class="cell_input" placeholder="Pesquisar" />
+                <input type="text" pInputText [(ngModel)]="value" class="cell_input" placeholder="Pesquisar" (input)="filterPacientes()" />
+
                 <i class="pi pi-search"></i>
             </span>
         </div>
         <div>
 
             <div class="card flex justify-content-center">
-                <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true"
-                    placeholder="Pacientes ativos" class="dropdown"></p-dropdown>
+                <p-dropdown [options]="pacientes" [(ngModel)]="opcaoSelecionada" optionLabel="name" [showClear]="true"
+                    placeholder="Pacientes ativos" class="dropdown" (ngModelChange)="onPacienteChange()"></p-dropdown>
             </div>
         </div>
     </div>
     <br>
     <div></div>
     <div class="body">
-        <p-table [columns]="cols" [value]="paciente">
+        <p-table [columns]="cols" [value]="filtropacientes">
             <ng-template pTemplate="header" let-columns>
                 <tr>
                     <th pSortableColumn="paciente" style="width:10%; ">Paciente <i field="paciente"
                             class="pi pi-sort"></i></th>
-                    <th pSortableColumn="status" style="width:10%;">Status <i field="status" class="pi pi-sort"></i></th>
+                    <th pSortableColumn="status" style="width:10%;">Status <i field="status" class="pi pi-sort"></i>
+                    </th>
                     <th pSortableColumn="diagnostico" style="width:15%">Diagnóstico <i field="diagnostico"
                             class="pi pi-sort"></i></th>
                     <th pSortableColumn="medicamento" style="width:15%">Medicamento <i field="medicamento"
@@ -46,15 +48,17 @@
             </ng-template>
             <ng-template pTemplate="body" let-rowData let-columns="columns">
                 <tr>
-                    <td *ngFor="let col of columns" style="margin-top: 5px; margin-bottom: 5px;">
-                        {{ rowData[col.field] }}
-                    </td>
+                    <td>{{ rowData.paciente }}</td>
+                    <td><p-tag [value]="rowData.status ? 'Ativo' : 'Inativo'" [severity]="getSeverity(rowData.status)"></p-tag></td>
+                    <td>{{ rowData.diagnostico }}</td>
+                    <td>{{ rowData.medicamento }}</td>
+                    <td>{{ rowData.planodesaude }}</td>
+                    <td>{{ rowData.ultimasolicitacao }}</td>
                     <td>
-                    <span class="material-symbols-outlined">
-                        prescriptions
+                        <span class="material-symbols-outlined">
+                            prescriptions
                         </span>
-                        <i class=" pi pi-ellipsis-h" style="margin-left: 10px; ">
-                        </i>
+                        <i class=" pi pi-ellipsis-h" style="margin-left: 10px;"></i>
                     </td>
                 </tr>
             </ng-template>
