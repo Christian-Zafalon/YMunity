@@ -28,7 +28,12 @@
     <br>
     <div></div>
     <div class="body">
-        <p-table [columns]="cols" [value]="filtropacientes">
+        <p-table [columns]="cols" [value]="filtropacientes"     [rows]="10"
+        [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[10, 25, 50]"
+        [paginator]="true"
+        class="p-paginator-right"
+        currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} pacientes">
             <ng-template pTemplate="header" let-columns>
                 <tr>
                     <th pSortableColumn="paciente" style="width:10%; ">Paciente <i field="paciente"
@@ -58,7 +63,7 @@
                         <span class="material-symbols-outlined">
                             prescriptions
                         </span>
-                        <i class=" pi pi-ellipsis-h" style="margin-left: 10px;"></i>
+                        <i (click)="teste()" class=" pi pi-ellipsis-h pointer" style="margin-left: 10px;"></i>
                     </td>
                 </tr>
             </ng-template>

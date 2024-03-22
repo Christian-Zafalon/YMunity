@@ -73,4 +73,7 @@ export class PacientesComponent {
     }
   }
   
+  teste(){
+    console.log('teste')
+  }
 }
