@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,11 +16,13 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { TableModule } from 'primeng/table';
 import { ProductService } from './Service/productservice';
+import { DropdownModule } from 'primeng/dropdown';
 @NgModule({
   declarations: [AppComponent, PacientesComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     StyleClassModule,
     ButtonModule,
@@ -28,7 +31,8 @@ import { ProductService } from './Service/productservice';
     SidebarModule,
     AvatarModule,
     AvatarGroupModule,
-    TableModule
+    TableModule,
+    DropdownModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],

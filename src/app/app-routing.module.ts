@@ -4,7 +4,7 @@ import { PacientesComponent } from './Pages/pacientes/pacientes.component';
 import { SidebarComponent } from './Shared/sidebar/sidebar.component';
 
 const routes: Routes = [
-  { path: '', component: SidebarComponent },
+  { path: '', component: PacientesComponent },
 ];
 
 @NgModule({
