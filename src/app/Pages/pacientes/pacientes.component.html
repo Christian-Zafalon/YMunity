@@ -60,13 +60,13 @@
                     <td>{{ rowData.planodesaude }}</td>
                     <td>{{ rowData.ultimasolicitacao }}</td>
                     <td>
-                        <span class="material-symbols-outlined">
+                        <span pTooltip="Nova solicitação" class="material-symbols-outlined">
                             prescriptions
                         </span>
                         <div *ngIf="rowData.showListbox" class="card flex justify-content-center">
                             <p-listbox [options]="optionPaciente" [(ngModel)]="selectedOption" (ngModelChange)="onDesativaAtivaPaciente(rowData)" optionLabel="name" [style]="{'width':'15rem'}" [listStyle]="{'max-height': '220px'}"></p-listbox>
                         </div>
-                        <i *ngIf="!rowData.showListbox" (click)="toggleListbox(rowData)" class=" pi pi-ellipsis-h pointer" style="margin-left: 10px;"></i>
+                        <i pTooltip="Atualizar status" *ngIf="!rowData.showListbox" (click)="toggleListbox(rowData)" class=" pi pi-ellipsis-h pointer" style="margin-left: 10px;"></i>
                     </td>
                 </tr>
             </ng-template>

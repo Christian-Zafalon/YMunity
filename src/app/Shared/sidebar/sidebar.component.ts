@@ -11,7 +11,7 @@ export class SidebarComponent {
     { label: 'Pacientes', icon: 'pi pi-users mr-2'},
     { label: 'Solicitações', icon: 'pi pi-calendar-plus mr-2' },
     { label: 'Atendimentos', icon: 'pi pi-briefcase mr-2' },
-    { label: 'Dashboards', icon: 'pi pi-cog mr-2' }
+    { label: 'Dashboards', icon: 'pi pi-chart-line mr-2' }
 ];
 
   @ViewChild('sidebarRef') sidebarRef!: Sidebar;

@@ -20,6 +20,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RatingModule } from 'primeng/rating';
 import { TagModule } from 'primeng/tag';
 import { ListboxModule } from 'primeng/listbox';
+import { TooltipModule } from 'primeng/tooltip';
 @NgModule({
   declarations: [AppComponent, PacientesComponent, SidebarComponent],
   imports: [
@@ -38,7 +39,8 @@ import { ListboxModule } from 'primeng/listbox';
     DropdownModule,
     RatingModule,
     TagModule,
-    ListboxModule
+    ListboxModule,
+    TooltipModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],
