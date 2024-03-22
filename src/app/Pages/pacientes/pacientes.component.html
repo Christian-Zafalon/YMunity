@@ -63,7 +63,10 @@
                         <span class="material-symbols-outlined">
                             prescriptions
                         </span>
-                        <i (click)="teste()" class=" pi pi-ellipsis-h pointer" style="margin-left: 10px;"></i>
+                        <div *ngIf="rowData.showListbox" class="card flex justify-content-center">
+                            <p-listbox [options]="optionPaciente" [(ngModel)]="selectedOption" (ngModelChange)="onDesativaAtivaPaciente(rowData)" optionLabel="name" [style]="{'width':'15rem'}" [listStyle]="{'max-height': '220px'}"></p-listbox>
+                        </div>
+                        <i *ngIf="!rowData.showListbox" (click)="toggleListbox(rowData)" class=" pi pi-ellipsis-h pointer" style="margin-left: 10px;"></i>
                     </td>
                 </tr>
             </ng-template>

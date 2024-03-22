@@ -7,4 +7,5 @@ export interface Paciente {
     medicamento?: string;
     planodesaude?: string;
     ultimasolicitacao?: string;
+    showListbox?: boolean;
 }

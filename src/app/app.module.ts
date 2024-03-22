@@ -19,6 +19,7 @@ import { ProductService } from './Service/productservice';
 import { DropdownModule } from 'primeng/dropdown';
 import { RatingModule } from 'primeng/rating';
 import { TagModule } from 'primeng/tag';
+import { ListboxModule } from 'primeng/listbox';
 @NgModule({
   declarations: [AppComponent, PacientesComponent, SidebarComponent],
   imports: [
@@ -36,7 +37,8 @@ import { TagModule } from 'primeng/tag';
     TableModule,
     DropdownModule,
     RatingModule,
-    TagModule
+    TagModule,
+    ListboxModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent],

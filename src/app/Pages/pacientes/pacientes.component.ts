@@ -11,6 +11,11 @@ interface Pacientes {
   name: string;
   code: number;
 }
+
+interface optionPaciente {
+  name: string;
+  status: boolean;
+}
 @Component({
   selector: 'app-pacientes',
   templateUrl: './pacientes.component.html',
@@ -22,21 +27,28 @@ export class PacientesComponent {
   cols!: Column[];
   value: string | undefined;
   value2: string | undefined;
-
+  listboxoptions: boolean = false;
   constructor(private productService: ProductService) {}
   pacientes: Pacientes[] | undefined;
+  optionPaciente!: optionPaciente[];
+  selectedOption!: optionPaciente;
 
   opcaoSelecionada: Pacientes | undefined;
   ngOnInit() {
     this.pacientes = [
       { name: 'Ativos', code: 1 },
       { name: 'Inativos', code: 2 },
-      { name: 'Todos pacientes', code: 3 }
+      { name: 'Todos pacientes', code: 3 },
+    ];
+
+    this.optionPaciente = [
+      { name: 'Ativo', status: true },
+      { name: 'Inativo', status: false },
     ];
 
     this.productService.getProductsMini().then((data) => {
       this.paciente = data;
-      this.filtropacientes = this.paciente.filter(paciente => {
+      this.filtropacientes = this.paciente.filter((paciente) => {
         return paciente.status === true;
       });
     });
@@ -55,25 +67,36 @@ export class PacientesComponent {
     return status ? 'success' : 'error';
   }
 
-  onPacienteChange(){
-    this.filtropacientes = this.opcaoSelecionada?.code === 3 ? this.paciente : this.paciente.filter(paciente => {
-      return this.opcaoSelecionada?.code === 1 ? paciente.status === true : paciente.status === false;
-    })
-
+  onPacienteChange() {
+    this.filtropacientes =
+      this.opcaoSelecionada?.code === 3
+        ? this.paciente
+        : this.paciente.filter((paciente) => {
+            return this.opcaoSelecionada?.code === 1
+              ? paciente.status === true
+              : paciente.status === false;
+          });
   }
 
   filterPacientes() {
     if (this.value) {
-      this.filtropacientes = this.paciente.filter(paciente =>
-        Object.values(paciente).some(val => val && val.toString().toLowerCase().includes(this.value?.toLowerCase()))
+      this.filtropacientes = this.paciente.filter((paciente) =>
+        Object.values(paciente).some(
+          (val) =>
+            val &&
+            val.toString().toLowerCase().includes(this.value?.toLowerCase())
+        )
       );
     } else {
-      // Se o campo de pesquisa estiver vazio, exiba todos os pacientes
       this.filtropacientes = this.paciente;
     }
   }
-  
-  teste(){
-    console.log('teste')
+
+  toggleListbox(paciente: Paciente) {
+    paciente.showListbox = !paciente.showListbox;
+  }
+
+  onDesativaAtivaPaciente(paciente: Paciente) {
+    paciente.status = this.selectedOption.status;
   }
 }
